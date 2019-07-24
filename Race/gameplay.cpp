@@ -1,4 +1,5 @@
 #include "gameplay.h"
+#include <iostream>
 
 gameplay::gameplay()
 {
@@ -11,7 +12,20 @@ gameplay::gameplay()
 		sf::Event event;
 		while (window->pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed) window->close();
+			switch (event.type)
+			{
+				case sf::Event::Closed:
+					window->close();
+					break;
+				case sf::Event::JoystickButtonPressed:
+					std::cout << "id: " << event.joystickButton.joystickId<<std::endl;
+					break;
+				case sf::Event::JoystickConnected:
+					std::cout << "id: " << event.joystickConnect.joystickId << std::endl;
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }
