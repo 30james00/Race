@@ -1,5 +1,4 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 #include"car.h"
 #include"map.h"
 class gameplay
@@ -7,7 +6,9 @@ class gameplay
 private:
 	car *car1;
 	map *track;
-	sf::Window *window;
+	sf::RenderWindow *window;
+	sf::Texture tekstura;
+	sf::Sprite dot;
 public:
 	gameplay();
 	void check();
