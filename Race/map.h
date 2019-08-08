@@ -3,6 +3,8 @@
 #include <SFML/Window.hpp>
 #include <time.h>
 #include <stdlib.h>
+#include<iostream>
+
 class gate
 {
 private:
@@ -18,6 +20,5 @@ private:
 	gate *gat;
 public:
 	map();
-	~map();
 };
 

@@ -7,16 +7,11 @@ gameplay::gameplay()
 	track = new map;
 	window = new sf::RenderWindow(sf::VideoMode(512,512), "Race");
 	window->setVerticalSyncEnabled(true);
-	if (!tekstura.loadFromFile("dot.png"))
-	{
-		std::cout << "Dot.png load error";
-	}
-	dot.setTexture(tekstura);
 	
 	while (window->isOpen())
 	{
 		window->clear(sf::Color(255, 255, 255, 255));
-		window->draw(dot);
+		window->draw(car1->drawCar());
 		window->display();
 		sf::Event event;
 		while (window->pollEvent(event))
