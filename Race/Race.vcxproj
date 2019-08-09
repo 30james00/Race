@@ -128,13 +128,18 @@
   <ItemGroup>
     <ClCompile Include="car.cpp" />
     <ClCompile Include="gameplay.cpp" />
+    <ClCompile Include="gate.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="car.h" />
     <ClInclude Include="gameplay.h" />
+    <ClInclude Include="gate.h" />
     <ClInclude Include="map.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="dot.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
