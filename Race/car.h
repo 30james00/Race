@@ -1,36 +1,25 @@
 #pragma once
 #include "map.h"
-
-class position
-{
-private:
-	int x, y;
-public:
-	position(int,int);
-};
-
-class moveing
-{
-private:
-	int speed, angle;
-public:
-	moveing(int, int);
-};
+#include "position.h"
+#include "moveing.h"
 
 class car
 {
 private:
 	position *pos;
 	moveing *mov;
+	//graphics
 	sf::Texture carTexture;
 	sf::Sprite carSprite;
 
 public:
+	//constructors
 	car();
 	car(int, int, int, int);
+	//movement
+	void changePosition(int, int);
+	//graphics
 	void makeCarSprite();
-	void changeSpeed(int);
-	void changeDirection(int);
 	sf::Sprite drawCar();
 };
 

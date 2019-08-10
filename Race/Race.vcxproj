@@ -130,6 +130,8 @@
     <ClCompile Include="gameplay.cpp" />
     <ClCompile Include="gate.cpp" />
     <ClCompile Include="map.cpp" />
+    <ClCompile Include="moveing.cpp" />
+    <ClCompile Include="position.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +139,8 @@
     <ClInclude Include="gameplay.h" />
     <ClInclude Include="gate.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="moveing.h" />
+    <ClInclude Include="position.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="dot.png" />

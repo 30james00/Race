@@ -2,8 +2,8 @@
 
 car::car()
 {
-	pos = new position(0, 0);
-	mov = new moveing(0, 0);
+	pos = new position();
+	mov = new moveing();
 	makeCarSprite();
 }
 
@@ -12,6 +12,12 @@ car::car(int a, int b, int c, int d)
 	pos = new position(a, b);
 	mov = new moveing(c, d);
 	makeCarSprite();
+}
+
+void car::changePosition(int x, int y)
+{
+	pos->change(x, y);
+	carSprite.setPosition(sf::Vector2f(pos->x(),pos->y()));
 }
 
 void car::makeCarSprite()
@@ -23,27 +29,7 @@ void car::makeCarSprite()
 	carSprite.setTexture(carTexture);
 }
 
-void car::changeSpeed(int)
-{
-}
-
-void car::changeDirection(int)
-{
-}
-
 sf::Sprite car::drawCar()
 {
 	return carSprite;
-}
-
-position::position(int a, int b)
-{
-	x = a;
-	y = b;
-}
-
-moveing::moveing(int a, int b)
-{
-	speed = a;
-	angle = b;
 }

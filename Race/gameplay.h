@@ -11,6 +11,6 @@ private:
 
 public:
 	gameplay();
-	void check();
+	void refresh();
 };
 
