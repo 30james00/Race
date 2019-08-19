@@ -5,6 +5,7 @@ gameplay::gameplay()
 {
 	car1 = new car;
 	track = new map;
+	counter = new score;
 	window = new sf::RenderWindow(sf::VideoMode(512,512), "Race");
 	window->setVerticalSyncEnabled(true);
 }
@@ -16,8 +17,10 @@ void gameplay::refresh()
 	{
 		window->clear(sf::Color(255, 255, 255, 255));
 		window->draw(car1->drawCar());
+		window->draw(counter->getText());
 		window->display();
 		car1->changePosition(a++, b++);
+		counter->timeFlies();
 		sf::Event event;
 		while (window->pollEvent(event))
 		{
