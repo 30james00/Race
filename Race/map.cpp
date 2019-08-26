@@ -7,3 +7,8 @@ map::map()
 	srand(time(NULL));
 	gat = new gate(rand() % 500);
 }
+
+std::vector<sf::Vertex> map::getLineShape()
+{
+	return gat->getShape();
+}

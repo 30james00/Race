@@ -4,32 +4,31 @@ car::car()
 {
 	pos = new position();
 	mov = new moveing();
-	makeCarSprite();
+	prepareGraphics();
 }
 
 car::car(int a, int b, int c, int d)
 {
 	pos = new position(a, b);
 	mov = new moveing(c, d);
-	makeCarSprite();
+	prepareGraphics();
 }
 
 void car::changePosition(int x, int y)
 {
 	pos->change(x, y);
-	carSprite.setPosition(sf::Vector2f(pos->x(),pos->y()));
+	circleShape.setPosition(sf::Vector2f(pos->x(),pos->y()));
 }
 
-void car::makeCarSprite()
+void car::prepareGraphics()
 {
-	if (!carTexture.loadFromFile("dot.png"))
-	{
-		std::cout << "Dot.png load error";
-	}
-	carSprite.setTexture(carTexture);
+	circleShape = sf::CircleShape(10);
+	circleShape.setFillColor(sf::Color(0, 0, 0));
+	circleShape.setPosition(pos->x(), pos->y());
 }
 
-sf::Sprite car::drawCar()
+sf::CircleShape car::getShape()
 {
-	return carSprite;
+	return circleShape;
 }
+

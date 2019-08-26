@@ -15,12 +15,16 @@ void gameplay::refresh()
 	int a = 0, b = 0;
 	while (window->isOpen())
 	{
+		//drawing assets
 		window->clear(sf::Color(255, 255, 255, 255));
-		window->draw(car1->drawCar());
+		window->draw(car1->getShape());
 		window->draw(counter->getText());
+		window->draw(&track->getLineShape()[0], track->getLineShape().size(), sf::Lines);
 		window->display();
-		car1->changePosition(a++, b++);
+		//changing assets properities for next frame
+		if(a<500) car1->changePosition(a++, b++);
 		counter->timeFlies();
+		//handling events
 		sf::Event event;
 		while (window->pollEvent(event))
 		{

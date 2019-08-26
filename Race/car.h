@@ -9,8 +9,7 @@ private:
 	position *pos;
 	moveing *mov;
 	//graphics
-	sf::Texture carTexture;
-	sf::Sprite carSprite;
+	sf::CircleShape circleShape;
 
 public:
 	//constructors
@@ -19,7 +18,7 @@ public:
 	//movement
 	void changePosition(int, int);
 	//graphics
-	void makeCarSprite();
-	sf::Sprite drawCar();
+	void prepareGraphics();
+	sf::CircleShape getShape();
 };
 
