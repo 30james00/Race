@@ -5,9 +5,10 @@ class map
 {
 private:
 	float size_x, size_y;
-	gate *gat;
+	int curGate;
+	std::vector<gate> gates;
 public:
 	map();
-	std::vector<sf::Vertex> getLineShape();
+	sf::VertexArray getLineShape();
 };
 

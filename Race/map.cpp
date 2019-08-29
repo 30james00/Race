@@ -4,11 +4,17 @@ map::map()
 {
 	size_x = 512;
 	size_y = 512;
+	curGate = 0;
 	srand(time(NULL));
-	gat = new gate(rand() % 500);
+	gates.push_back(gate(rand() % 512));
+	gates.push_back(gate(rand() % 512));
+	gates.push_back(gate(rand() % 512));
 }
 
-std::vector<sf::Vertex> map::getLineShape()
+sf::VertexArray map::getLineShape()
 {
-	return gat->getShape();
+	curGate++;
+	curGate %= static_cast<int>(gates.size());
+	return gates[curGate].getShape();
 }
+

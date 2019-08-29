@@ -19,7 +19,9 @@ void gameplay::refresh()
 		window->clear(sf::Color(255, 255, 255, 255));
 		window->draw(car1->getShape());
 		window->draw(counter->getText());
-		window->draw(&track->getLineShape()[0], track->getLineShape().size(), sf::Lines);
+		window->draw(track->getLineShape());
+		window->draw(track->getLineShape());
+		window->draw(track->getLineShape());
 		window->display();
 		//changing assets properities for next frame
 		if(a<500) car1->changePosition(a++, b++);

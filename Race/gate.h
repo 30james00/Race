@@ -9,8 +9,8 @@ class gate
 {
 private:
 	float x1, y1, x2, y2;
-	std::vector<sf::Vertex> line;
+	sf::VertexArray line;
 public:
 	gate(float);
-	std::vector<sf::Vertex> getShape();
+	sf::VertexArray getShape();
 };
