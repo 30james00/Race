@@ -3,14 +3,14 @@
 car::car()
 {
 	pos = new position();
-	mov = new moveing();
+	mov = new moving();
 	prepareGraphics();
 }
 
 car::car(float a, float b, float c, float d)
 {
 	pos = new position(a, b);
-	mov = new moveing(c, d);
+	mov = new moving(c, d);
 	prepareGraphics();
 }
 

@@ -1,13 +1,13 @@
 #pragma once
 #include "map.h"
 #include "position.h"
-#include "moveing.h"
+#include "moving.h"
 
 class car
 {
 private:
 	position *pos;
-	moveing *mov;
+	moving *mov;
 	//graphics
 	sf::CircleShape circleShape;
 
