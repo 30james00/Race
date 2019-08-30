@@ -1,29 +1,30 @@
 #include "position.h"
 
+
 position::position()
 {
 	xCor = 0;
 	yCor = 0;
 }
 
-position::position(int a, int b)
+position::position(float a, float b)
 {
 	xCor = a;
 	yCor = b;
 }
 
-void position::change(int a, int b)
+void position::change(float a, float b)
 {
-	xCor = a;
-	yCor = b;
+	xCor += a;
+	yCor += b;
 }
 
-int position::x()
+float position::x()
 {
 	return xCor;
 }
 
-int position::y()
+float position::y()
 {
 	return yCor;
 }

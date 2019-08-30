@@ -14,9 +14,10 @@ private:
 public:
 	//constructors
 	car();
-	car(int, int, int, int);
+	car(float, float, float, float);
 	//movement
-	void changePosition(int, int);
+	void changeMovement(float, float);
+	void move();
 	//graphics
 	void prepareGraphics();
 	sf::CircleShape getShape();

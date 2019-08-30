@@ -3,8 +3,11 @@
 class moveing
 {
 private:
-	int speed, angle;
+	float xCor, yCor;
 public:
 	moveing();
-	moveing(int, int);
+	moveing(float, float);
+	void change(float, float);
+	float x();
+	float y();
 };

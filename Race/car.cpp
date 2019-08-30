@@ -7,17 +7,22 @@ car::car()
 	prepareGraphics();
 }
 
-car::car(int a, int b, int c, int d)
+car::car(float a, float b, float c, float d)
 {
 	pos = new position(a, b);
 	mov = new moveing(c, d);
 	prepareGraphics();
 }
 
-void car::changePosition(int x, int y)
+void car::changeMovement(float x, float y)
 {
-	pos->change(x, y);
-	circleShape.setPosition(sf::Vector2f(pos->x(),pos->y()));
+	mov->change(x, y);
+}
+
+void car::move()
+{
+	pos->change(mov->x(), mov->y());
+	circleShape.setPosition(pos->x(), pos->y());
 }
 
 void car::prepareGraphics()

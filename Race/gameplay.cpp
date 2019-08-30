@@ -6,13 +6,12 @@ gameplay::gameplay()
 	car1 = new car;
 	track = new map;
 	counter = new score;
-	window = new sf::RenderWindow(sf::VideoMode(512,512), "Race");
+	window = new sf::RenderWindow(sf::VideoMode(512, 512), "Race");
 	window->setVerticalSyncEnabled(true);
 }
 
 void gameplay::refresh()
 {
-	int a = 0, b = 0;
 	while (window->isOpen())
 	{
 		//drawing assets
@@ -22,7 +21,7 @@ void gameplay::refresh()
 		drawGates();
 		window->display();
 		//changing assets properities for next frame
-		if(a<500) car1->changePosition(a++, b++);
+		car1->move();
 		counter->timeFlies();
 		//handling events
 		sf::Event event;
@@ -33,8 +32,24 @@ void gameplay::refresh()
 			case sf::Event::Closed:
 				window->close();
 				break;
-			case sf::Event::JoystickButtonPressed:
-				std::cout << "id: " << event.joystickButton.joystickId << std::endl;
+			case sf::Event::KeyPressed:
+				switch (event.key.code)
+				{
+				case sf::Keyboard::Left:
+					car1->changeMovement(-1, 0);
+					break;
+				case sf::Keyboard::Right:
+					car1->changeMovement(1, 0);
+					break;
+				case sf::Keyboard::Up:
+					 car1->changeMovement(0, -1);
+					break;
+				case sf::Keyboard::Down:
+					car1->changeMovement(0, 1);
+					break;
+				default:
+					break;
+				}
 				break;
 			case sf::Event::JoystickConnected:
 				std::cout << "id: " << event.joystickConnect.joystickId << std::endl;

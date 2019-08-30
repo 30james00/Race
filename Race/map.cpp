@@ -19,10 +19,6 @@ map::map()
 			gates.push_back(gate(tempCor[0], tempCor[1], tempCor[2], tempCor[3]));
 		}
 	}
-	/*srand(time(NULL));
-	gates.push_back(gate(rand() % size_x));
-	gates.push_back(gate(rand() % size_x));
-	gates.push_back(gate(rand() % size_x));*/
 }
 
 std::vector<gate> map::getLineShape()

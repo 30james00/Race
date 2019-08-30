@@ -4,12 +4,12 @@
 class position
 {
 private:
-	int xCor, yCor;
+	float xCor, yCor;
 public:
 	position();
-	position(int, int);
-	void change(int, int);
-	int x();
-	int y();
+	position(float, float);
+	void change(float, float);
+	float x();
+	float y();
 };
 

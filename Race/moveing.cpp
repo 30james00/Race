@@ -1,13 +1,31 @@
 #include "moveing.h"
+#include<iostream>
 
 moveing::moveing()
 {
-	speed = 0;
-	angle = 0;
+	xCor = 0;
+	yCor = 0;
 }
 
-moveing::moveing(int a, int b)
+moveing::moveing(float a, float b)
 {
-	speed = a;
-	angle = b;
+	xCor = a;
+	yCor = b;
+}
+
+void moveing::change(float x, float y)
+{
+	xCor += x;
+	yCor += y;
+	std::cout << xCor << " " << yCor;
+}
+
+float moveing::x()
+{
+	return xCor;
+}
+
+float moveing::y()
+{
+	return yCor;
 }
