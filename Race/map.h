@@ -1,6 +1,7 @@
 #pragma once
 #include "gate.h"
 #include<fstream>;
+#include<string>;
 
 class map
 {

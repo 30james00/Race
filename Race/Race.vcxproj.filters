@@ -64,8 +64,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="dot.png">
+    <Text Include="gates.txt">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Text>
   </ItemGroup>
 </Project>

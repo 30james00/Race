@@ -22,7 +22,7 @@ void car::changePosition(int x, int y)
 
 void car::prepareGraphics()
 {
-	circleShape = sf::CircleShape(10);
+	circleShape = sf::CircleShape(2);
 	circleShape.setFillColor(sf::Color(0, 0, 0));
 	circleShape.setPosition(pos->x(), pos->y());
 }
