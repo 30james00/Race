@@ -12,5 +12,7 @@ private:
 	sf::VertexArray line;
 public:
 	gate(float);
+	gate(float, float, float, float);
+	void makeVertexArray();
 	sf::VertexArray getShape();
 };

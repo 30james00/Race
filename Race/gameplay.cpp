@@ -19,9 +19,7 @@ void gameplay::refresh()
 		window->clear(sf::Color(255, 255, 255, 255));
 		window->draw(car1->getShape());
 		window->draw(counter->getText());
-		window->draw(track->getLineShape());
-		window->draw(track->getLineShape());
-		window->draw(track->getLineShape());
+		drawGates();
 		window->display();
 		//changing assets properities for next frame
 		if(a<500) car1->changePosition(a++, b++);
@@ -45,5 +43,14 @@ void gameplay::refresh()
 				break;
 			}
 		}
+	}
+}
+
+void gameplay::drawGates()
+{
+	std::vector<gate> toDraw = track->getLineShape();
+	for (int i = 0; i < toDraw.size(); i++)
+	{
+		window->draw(toDraw[i].getShape());
 	}
 }

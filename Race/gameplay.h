@@ -14,5 +14,6 @@ private:
 public:
 	gameplay();
 	void refresh();
+	void drawGates();
 };
 

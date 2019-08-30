@@ -1,14 +1,15 @@
 #pragma once
 #include "gate.h"
+#include<fstream>;
 
 class map
 {
 private:
 	float size_x, size_y;
-	int curGate;
+	std::fstream file;
 	std::vector<gate> gates;
 public:
 	map();
-	sf::VertexArray getLineShape();
+	std::vector<gate> getLineShape();
 };
 
