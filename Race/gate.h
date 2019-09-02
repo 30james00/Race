@@ -8,7 +8,7 @@
 class gate
 {
 private:
-	float x1, y1, x2, y2;
+	sf::Vector2f p1, p2;
 	sf::VertexArray line;
 public:
 	gate(float);
