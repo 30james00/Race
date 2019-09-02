@@ -30,13 +30,7 @@
     <ClCompile Include="gate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="position.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="score.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="moving.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,13 +47,7 @@
     <ClInclude Include="gate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="position.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="score.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="moving.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -130,8 +130,6 @@
     <ClCompile Include="gameplay.cpp" />
     <ClCompile Include="gate.cpp" />
     <ClCompile Include="map.cpp" />
-    <ClCompile Include="moving.cpp" />
-    <ClCompile Include="position.cpp" />
     <ClCompile Include="score.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -140,8 +138,6 @@
     <ClInclude Include="gameplay.h" />
     <ClInclude Include="gate.h" />
     <ClInclude Include="map.h" />
-    <ClInclude Include="moving.h" />
-    <ClInclude Include="position.h" />
     <ClInclude Include="score.h" />
   </ItemGroup>
   <ItemGroup>
