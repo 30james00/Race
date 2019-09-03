@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="audio.cpp" />
     <ClCompile Include="car.cpp" />
     <ClCompile Include="gameplay.cpp" />
     <ClCompile Include="gate.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="audio.h" />
     <ClInclude Include="car.h" />
     <ClInclude Include="gameplay.h" />
     <ClInclude Include="gate.h" />

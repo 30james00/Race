@@ -3,9 +3,10 @@
 
 gameplay::gameplay()
 {
-	car1 = new car;
-	track = new map;
-	counter = new score;
+	car1 = new car();
+	track = new map();
+	counter = new score();
+	aud = new audio();
 	window = new sf::RenderWindow(sf::VideoMode(512, 512), "Race");
 	window->setVerticalSyncEnabled(true);
 }
@@ -22,11 +23,7 @@ void gameplay::refresh()
 		window->display();
 		//changing assets properities for next frame
 		car1->move();
-		if (segmentsIntersect(car1->getPos(), car1->getLastPos(), track->getCurGate().getP1(), track->getCurGate().getP2()))
-		{
-			counter->scoreUp();
-			track->nextGate();
-		}
+		passHandling();
 		counter->timeFlies();
 		//handling events
 		sf::Event event;
@@ -72,6 +69,16 @@ void gameplay::drawGates()
 	for (int i = 0; i < toDraw.size(); i++)
 	{
 		window->draw(toDraw[i].getShape());
+	}
+}
+
+void gameplay::passHandling()
+{
+	if (segmentsIntersect(car1->getPos(), car1->getLastPos(), track->getCurGate().getP1(), track->getCurGate().getP2()))
+	{
+		counter->scoreUp();
+		track->nextGate();
+		aud->playPass();
 	}
 }
 
