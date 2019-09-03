@@ -2,9 +2,10 @@
 
 score::score()
 {
+	clock.restart();
 	//set values at 0
 	scoreValue = 0;
-	timeValue = 0;
+	timeValue = clock.getElapsedTime().asSeconds();
 	//load font
 	if (!font.loadFromFile("RobotoMono.ttf")) std::cout << "Font load error";
 	//create text
@@ -15,7 +16,7 @@ score::score()
 }
 
 void score::timeFlies() {
-	timeValue++;
+	timeValue = clock.getElapsedTime().asSeconds();
 	changeText();
 }
 void score::scoreUp()
