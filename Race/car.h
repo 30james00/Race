@@ -4,7 +4,7 @@
 class car
 {
 private:
-	sf::Vector2f pos, mov;
+	sf::Vector2f pos, lastPos, mov;
 	//graphics
 	sf::CircleShape circleShape;
 
@@ -12,6 +12,9 @@ public:
 	//constructors
 	car();
 	car(float, float, float, float);
+	//position access
+	sf::Vector2f getPos();
+	sf::Vector2f getLastPos();
 	//movement
 	void changeMovement(float, float);
 	void move();

@@ -17,7 +17,13 @@ score::score()
 void score::timeFlies() {
 	timeValue++;
 	changeText();
-};
+}
+void score::scoreUp()
+{
+	scoreValue++;
+	changeText();
+}
+
 
 sf::Text score::getText()
 {

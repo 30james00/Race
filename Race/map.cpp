@@ -5,6 +5,8 @@ map::map()
 	//height and width
 	size_x = 512;
 	size_y = 512;
+	//first gate
+	curGate = 0;
 	//importing gates from .txt file
 	file.open("gates.txt", std::ios::in);
 	if (file.good())
@@ -24,5 +26,16 @@ map::map()
 std::vector<gate> map::getLineShape()
 {
 	return gates;
+}
+
+gate map::getCurGate()
+{
+	return gates[curGate];
+}
+
+void map::nextGate()
+{
+	curGate++;
+	curGate %= gates.size();
 }
 

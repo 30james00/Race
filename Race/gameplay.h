@@ -15,5 +15,11 @@ public:
 	gameplay();
 	void refresh();
 	void drawGates();
+	//check if 2 lines cross
+	bool segmentsIntersect(sf::Vector2f, sf::Vector2f, sf::Vector2f, sf::Vector2f);
+	//check vector product
+	float direction(sf::Vector2f, sf::Vector2f, sf::Vector2f);
+	//check if point is part of line
+	bool onSegment(sf::Vector2f, sf::Vector2f, sf::Vector2f);
 };
 

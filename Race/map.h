@@ -7,10 +7,13 @@ class map
 {
 private:
 	float size_x, size_y;
+	int curGate;
 	std::fstream file;
 	std::vector<gate> gates;
 public:
 	map();
 	std::vector<gate> getLineShape();
+	gate getCurGate();
+	void nextGate();
 };
 

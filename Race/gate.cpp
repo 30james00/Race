@@ -23,3 +23,13 @@ sf::VertexArray gate::getShape()
 {
 	return line;
 }
+
+sf::Vector2f gate::getP1()
+{
+	return p1;
+}
+
+sf::Vector2f gate::getP2()
+{
+	return p2;
+}

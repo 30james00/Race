@@ -15,6 +15,7 @@ private:
 public:
 	score();
 	void timeFlies();
+	void scoreUp();
 	void changeText();
 	sf::Text getText();
 };

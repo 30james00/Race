@@ -15,4 +15,6 @@ public:
 	gate(float, float, float, float);
 	void makeVertexArray();
 	sf::VertexArray getShape();
+	sf::Vector2f getP1();
+	sf::Vector2f getP2();
 };

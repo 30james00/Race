@@ -3,15 +3,27 @@
 car::car()
 {
 	pos = sf::Vector2f(0, 0);
+	lastPos = sf::Vector2f(0,0);
 	mov = sf::Vector2f(0, 0);
 	prepareGraphics();
 }
 
 car::car(float a, float b, float c, float d)
 {
-	pos = sf::Vector2f(0, 0);
-	mov = sf::Vector2f(0, 0);
+	pos = sf::Vector2f(a, b);
+	lastPos = sf::Vector2f(a, b);
+	mov = sf::Vector2f(c, d);
 	prepareGraphics();
+}
+
+sf::Vector2f car::getPos()
+{
+	return pos;
+}
+
+sf::Vector2f car::getLastPos()
+{
+	return lastPos;
 }
 
 void car::changeMovement(float x, float y)
@@ -21,6 +33,7 @@ void car::changeMovement(float x, float y)
 
 void car::move()
 {
+	lastPos = pos;
 	pos = sf::Vector2f(pos.x + mov.x, pos.y + mov.y);
 	circleShape.setPosition(pos.x, pos.y);
 }
