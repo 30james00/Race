@@ -13,6 +13,7 @@ private:
 public:
 	map();
 	std::vector<gate> getLineShape();
+	gate getGate(int);
 	gate getCurGate();
 	void nextGate();
 };

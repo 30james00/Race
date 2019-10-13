@@ -66,10 +66,40 @@ void gameplay::refresh()
 void gameplay::drawGates()
 {
 	std::vector<gate> toDraw = track->getLineShape();
-	for (int i = 0; i < toDraw.size(); i++)
+	/*for (int i = 0; i < toDraw.size(); i++)
 	{
 		window->draw(toDraw[i].getShape());
+	}*/
+	//outline
+	for (int i = 0; i < toDraw.size() - 1; i++) {
+		sf::VertexArray line(sf::Lines, 2);
+		line[0].position = track->getGate(i).getP1();
+		line[1].position = track->getGate(i+1).getP1();
+		line[0].color = sf::Color::Black;
+		line[1].color = sf::Color::Black;
+		window->draw(line);
 	}
+	//inline
+	for (int i = 0; i < toDraw.size() - 1; i++) {
+		sf::VertexArray line(sf::Lines, 2);
+		line[0].position = track->getGate(i).getP2();
+		line[1].position = track->getGate(i + 1).getP2();
+		line[0].color = sf::Color::Black;
+		line[1].color = sf::Color::Black;
+		window->draw(line);
+	}
+	//connect last and first
+	sf::VertexArray line(sf::Lines, 2);
+	line[0].position = track->getGate(toDraw.size()-1).getP1();
+	line[1].position = track->getGate(0).getP1();
+	line[0].color = sf::Color::Black;
+	line[1].color = sf::Color::Black;
+	window->draw(line);
+	line[0].position = track->getGate(toDraw.size()-1).getP2();
+	line[1].position = track->getGate(0).getP2();
+	line[0].color = sf::Color::Black;
+	line[1].color = sf::Color::Black;
+	window->draw(line);
 }
 
 void gameplay::passHandling()

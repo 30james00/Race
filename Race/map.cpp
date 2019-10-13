@@ -28,6 +28,11 @@ std::vector<gate> map::getLineShape()
 	return gates;
 }
 
+gate map::getGate(int i)
+{
+	return gates[i];
+}
+
 gate map::getCurGate()
 {
 	return gates[curGate];
